@@ -124,7 +124,7 @@
 
 #level p {
     font-size: 18px;
-    color: white;
+    color: black;
     margin-top: 5px;
     margin-bottom: auto;
     padding-left: 12.5px;
@@ -139,7 +139,7 @@
 }
 
 #level_curr {
-    color: white;
+    color: black;
     font-weight: bold;
     padding: 2px 1px 2px 2px;
 }
