@@ -26,6 +26,11 @@ body {
     background-color: aqua;
 }
 
+/* character style */
+#gambar {
+    background-color: black;
+}
+
 /* button style */
 #action_button {
     display: flex;
@@ -49,5 +54,4 @@ body {
 
     width: 150px;
     height: 50px;
-    
 }
