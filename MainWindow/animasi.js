@@ -1,19 +1,20 @@
 $(document).ready(function() {
-    $("#Makan").on("click", function() {
-      $("#gambar").attr("src", "../Select_Character/bg_assetChar/Scene - Yellow Character/(Scene) Eat Burger/Versi Gif.gif");
+    $("#makan").on("click", function() {
+      $("#gambar").attr("src", "../MainWindow/character_assets/Scene - Yellow Character/(Scene) Eat Burger/Versi Gif.gif");
+      $("#gambar").css('transform', 'scale(' + 1.25 + ')');
       $("#gambar").attr("loop", false);
     });
   
-    $("#Tidur").on("click", function() {
+    $("#tidur").on("click", function() {
       $("#gambar").attr("src", "../Select_Character/bg_assetChar/Scene - Yellow Character/(Scene) Sleep/Versi Gif.gif");
       
     });
   
-    $("#Obat").on("click", function() {
+    $("#obat").on("click", function() {
       $("#gambar").attr("src", "../Select_Character/bg_assetChar/Scene - Yellow Character/(Scene) Minum Obat/Versi Gif.gif");
     });
   
-    $("#Main").on("click", function() {
+    $("#main").on("click", function() {
       $("#gambar").attr("src", "../Select_Character/bg_assetChar/Scene - Yellow Character/(Scene) Play (2)/Versi Gif.gif");
     });
   });

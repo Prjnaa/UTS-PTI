@@ -15,7 +15,11 @@
     <!-- container global -->
     <div id="container">
         <!-- container stats karakter -->
-        <div id="stats_container_outer" class="ms-5">
+        <div id="stats_container_outer">
+            <div id="level" class="d-flex text-center">
+                <p>level</p>
+                <div id="level_bar"><span id="level_curr">1</span></div>
+            </div>
             <div id="stats_container_inner" class="row">
                 <div id="outline_health" class="outline">
                     <img class="stat" src="../MainWindow/assets_stats/HealthBar/1.svg" alt="Health" id="health">
@@ -34,21 +38,17 @@
                     <div id="happy_filler"></div>
                 </div>
             </div>
-            <div id="level" class="d-flex mt-3 text-center">
-                <p>level</p>
-                <div id="level_bar"><span id="level_curr">1</span></div>
-            </div>
         </div>
         <!-- character container -->
         <div id="character_container">
-            <img id="gambar" src="../Select_Character/bg_assetChar/Scene - Yellow Character/(Scene) Lain/Versi gif/BERDIRI.gif"  style="width: 100px;">
+            <img id="gambar" src="../MainWindow/character_assets/Scene - Yellow Character/(Scene) Lain/Versi gif/BERDIRI.gif"  style="width: 100px;">
         </div>
         <!-- container button -->
         <div id="action_button">
-            <button onclick="changeImage('makan')" id= "Makan" >Makan</button>
-            <button onclick="changeImage('tidur')" id= "Tidur" >Tidur </button>
-            <button onclick="changeImage('obat')" id= "Obat" >Obat</button>
-            <button onclick="changeImage('main')" id = "Main" >Main</button>
+            <button onclick="changeImage('makan')" id="makan" >Makan</button>
+            <button onclick="changeImage('tidur')" id="tidur" >Tidur </button>
+            <button onclick="changeImage('obat')" id="obat" >Obat</button>
+            <button onclick="changeImage('main')" id ="main" >Main</button>
         </div>
 
         </div>

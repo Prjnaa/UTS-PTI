@@ -1,10 +1,17 @@
 #stats_container_outer {
     border: 2px solid white;
+    background-color: rgba(95, 95, 95, 0.411);
     display: flex;
-    flex-wrap: wrap;
-    width: 280px;
+    width: 100%;
     padding: 10px;
-    border-radius: 35px;
+    border-radius: 50px;
+}
+
+#stats_container_inner {
+    margin-left: 10%;
+    margin-right: 10px;
+    width: 60%;
+    justify-content: space-around;
 }
 
 .stat {
@@ -19,7 +26,7 @@
     width: 50px;
     height: 50px;
     position: relative;
-    margin: 0 10px;
+    margin: 10px 10px;
     text-align: center;
     overflow: hidden;
 }
@@ -115,8 +122,7 @@
 
 /* level section css */
 #level {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto 10px   ;
     border: 2px solid green;
     padding:  5px 5px;
     border-radius: 35px;
@@ -124,7 +130,7 @@
 
 #level p {
     font-size: 18px;
-    color: black;
+    color: rgb(255, 255, 255);
     margin-top: 5px;
     margin-bottom: auto;
     padding-left: 12.5px;
@@ -139,7 +145,7 @@
 }
 
 #level_curr {
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    padding: 2px 1px 2px 2px;
+    padding: 2px 1px 2px 1px;
 }
