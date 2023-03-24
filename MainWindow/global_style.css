@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+   max-height: 100vh;
+}
+
+body {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 25vh 0;
+}
+
+#container {
+    width: fit-content;
+}
