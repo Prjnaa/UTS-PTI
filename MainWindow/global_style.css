@@ -4,16 +4,50 @@
 }
 
 html {
-   max-height: 100vh;
+   max-height: 100vh; 
 }
 
 body {
     width: 100%;
     display: grid;
     place-items: center;
-    margin: 25vh 0;
+    position: relative;
 }
 
 #container {
+    display: grid;
+    place-items: center;
+    
+    height: 100vh;
     width: fit-content;
+    position: absolute;
+    top: 0vh;
+    
+    background-color: aqua;
+}
+
+/* button style */
+#action_button {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+
+    background-color: red;
+}
+
+#action_button button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+
+    background-color: transparent;
+    margin: 10px 10px;
+
+    border: 2px solid black;
+    border-radius: 20px;
+
+    width: 150px;
+    height: 50px;
+    
 }
