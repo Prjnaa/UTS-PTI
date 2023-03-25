@@ -3,12 +3,11 @@
     background-color: rgba(95, 95, 95, 0.411);
     display: flex;
     width: 100%;
-    padding: 10px;
     border-radius: 50px;
 }
 
 #stats_container_inner {
-    margin-left: 10%;
+    margin-left: 20%;
     margin-right: 10px;
     width: 60%;
     justify-content: space-around;
@@ -41,14 +40,13 @@
 }
 
 #health_filler {
-    content: "";
     position: absolute;
     width: 80px;
     height: 80px;
     background-color: #ff220083;
     left: 50%;
     border-radius: 40%;
-    top: 55px;
+    top: 0px;
     animation: flow 15s infinite linear;
 }
 
@@ -58,14 +56,13 @@
 }
 
 #energy_filler {
-    content: "";
     position: absolute;
     width: 80px;
     height: 80px;
     background-color: #0051ff86;
     left: 50%;
     border-radius: 40%;
-    top: 20px;
+    top: 0px;
     animation: flow 17.5s infinite linear;
 }
 
@@ -79,14 +76,13 @@
 }
 
 #hunger_filler {
-    content: "";
     position: absolute;
     width: 80px;
     height: 80px;
     background-color: #b5783c96;
     left: 50%;
     border-radius: 40%;
-    top: 20px;
+    top: 0px;
     animation: flow 18.5s infinite linear;
 }
 
@@ -96,14 +92,13 @@
 }
 
 #happy_filler {
-    content: "";
     position: absolute;
     width: 80px;
     height: 80px;
     background-color: #faef288c;
     left: 50%;
     border-radius: 40%;
-    top: 20px;
+    top: 0px;
     animation: flow 12.5s infinite linear;
 }
 
