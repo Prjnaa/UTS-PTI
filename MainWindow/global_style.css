@@ -32,12 +32,13 @@ body {
     place-items: center;
     
     width: 100%;
-    height: 140%;
+    height: 180%;
     border-radius: .75rem;
     border: .3rem solid white;
 }
 
 #gambar {
+    position: absolute;
     animation-name: idle;
     animation-iteration-count: infinite;
     animation-timing-function: steps(2);
