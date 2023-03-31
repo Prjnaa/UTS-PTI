@@ -5,13 +5,13 @@ $(document).ready(function() {
 
   $("#makan").on("click", function() {
     clearInterval(intervalId);
-    image.attr('src', "../MainWindow/character_assets/Scene - Yellow Character/(Scene) Eat Burger/Versi Gif.gif");
-    image.css('transform', `scale(1.3)`);
+    image.attr('src', "character_assets/Scene - Yellow Character/(Scene) Eat Burger/Versi Gif.gif");
+    image.css('transform', `scale(1.4)`);
     intervalId = setInterval(function(){
       image.css('transform', `scale(1)`);
       image.attr('src', originalImg);
       clearInterval(intervalId);
-    }, 1000);
+    }, 1200);
   });
 
   $("#tidur").on("click", function() {
@@ -20,7 +20,14 @@ $(document).ready(function() {
   });
 
   $("#obat").on("click", function() {
-    image.attr("src", "../Select_Character/bg_assetChar/Scene - Yellow Character/(Scene) Minum Obat/Versi Gif.gif");
+    clearInterval(intervalId);
+    image.attr('src', "character_assets/Scene - Yellow Character/(Scene) Minum Obat/Versi gif.gif");
+    image.css('transform', `scale(1.5)`);
+    intervalId = setInterval(function(){
+      image.css('transform', `scale(1)`);
+      image.attr('src', originalImg);
+      clearInterval(intervalId);
+    }, 3000);
   });
 
   $("#main").on("click", function() {
