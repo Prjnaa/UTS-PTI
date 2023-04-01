@@ -3,23 +3,34 @@ $(document).ready(function() {
   const originalImg = image.attr('src');
   let intervalId = null;
 
-  $("#makan").on("click", function() {
+  var makan= document.getElementById("makan");
+  var tidur= document.getElementById("tidur");
+  var obat= document.getElementById("obat");
+
+
+  $(makan).on("click", function() {
     clearInterval(intervalId);
-    image.attr('src', "character_assets/Scene - Yellow Character/(Scene) Eat Burger/Versi Gif.gif");
-    image.css('transform', `scale(1.4)`);
+    image.attr('src', "character_assets/Yellow Character/Anak//Makan Ice Cream.gif");
+    image.css('transform', `scale(1.5)`);
     intervalId = setInterval(function(){
       image.css('transform', `scale(1)`);
       image.attr('src', originalImg);
       clearInterval(intervalId);
-    }, 1200);
+    }, 2200);
   });
 
-  $("#tidur").on("click", function() {
-    image.attr("src", "../Select_Character/bg_assetChar/Scene - Yellow Character/(Scene) Sleep/Versi Gif.gif");
-    
+  $(tidur).on("click", function() {
+    clearInterval(intervalId);
+    image.attr('src', "character_assets/Yellow Character/Anak/Tidur.gif");
+    image.css('transform', `scale(1.8)`);
+    intervalId = setInterval(function(){
+      image.css('transform', `scale(1)`);
+      image.attr('src', originalImg);
+      clearInterval(intervalId);
+    }, 2200);
   });
 
-  $("#obat").on("click", function() {
+  $(obat).on("click", function() {
     clearInterval(intervalId);
     image.attr('src', "character_assets/Scene - Yellow Character/(Scene) Minum Obat/Versi gif.gif");
     image.css('transform', `scale(1.5)`);
