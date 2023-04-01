@@ -2,8 +2,9 @@
     border: 2px solid white;
     background-color: rgba(95, 95, 95, 0.411);
     display: flex;
-    width: 100%;
+    width: 40%;
     border-radius: 50px;
+    transform: translate(0%,-100%);
 }
 
 #stats_container_inner {

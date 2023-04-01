@@ -30,11 +30,11 @@ $(document).ready(function () {
       "character_assets/Yellow Character/Anak/Tidur.gif"
     );
     image.css({
-      transform: "scale(1.75)","right":"37%"
+      transform: "scale(1.75)","right":"37%","margin-top":"-20px"
     });
     intervalId = setInterval(function () {
       image.css({
-        transform: "scale(1)", "right": "41%"
+        transform: "scale(1)", "right": "41%","margin-top":"-20px"
         
       });
       image.attr("src", originalImg);
@@ -50,7 +50,7 @@ $(document).ready(function () {
     );
     image.css({
       transform: "scale(1.45)",
-      "margin-top": "-18px","right":"40%"
+      "margin-top": "-18px","right":"41%"
     });
     intervalId = setInterval(function () {
       image.css("transform", `scale(1)`);
@@ -60,6 +60,6 @@ $(document).ready(function () {
   });
 
   $("#main").on("click", function () {
-    window.location.href = "../coba_main_game/index.html"
+    window.location.href = "../main game/index.html"
   });
 });

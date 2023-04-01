@@ -48,10 +48,24 @@
         <div id="character_container">
             <img id="gambar" src="character_assets/Scene - Yellow Character/(Scene) Lain/Versi gif/BERDIRI.gif"
                 style="width: 120px;">
-            <video src="bg_assets/bg_asset.mp4" loop muted autoplay></video>
+
+            <div class="slideshow">
+                <div class="video-container">
+                    <video src="bg_assets/MORNING LIVING ROOM.mp4" loop muted autoplay></video>
+                </div>
+                <div class="video-container">
+                    <video src="bg_assets/MORINING KITCHEN.mp4" loop muted></video>
+                </div>
+                <div class="video-container">
+                    <video src="bg_assets/NIGHT LIVING ROOM.mp4" loop muted></video>
+                </div>   
+            </div>
+
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
         </div>
         <!-- container button -->
-        <div id="action_button">
+        <div id="action_button" style="bottom: 100%;">
             <button onclick="changeImage('makan')" id="makan">Makan</button>
             <button onclick="changeImage('tidur')" id="tidur">Tidur </button>
             <button onclick="changeImage('obat')" id="obat">Obat</button>
@@ -60,6 +74,53 @@
 
     </div>
     </div>
+
+    <script>
+        const slideshow = document.querySelector('.slideshow');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const videos = document.querySelectorAll('.video-container');
+
+let currentSlide = 0;
+
+function showSlide(slideIndex) {
+  // hide all slides
+  for (let i = 0; i < videos.length; i++) {
+    videos[i].style.display = 'none';
+  }
+
+  // show current slide
+  videos[slideIndex].style.display = 'block';
+}
+
+// show initial slide
+showSlide(currentSlide);
+
+prevBtn.addEventListener('click', () => {
+  currentSlide--;
+  if (currentSlide < 0) {
+    currentSlide = videos.length - 1;
+  }
+  slideshow.classList.add('active');
+  setTimeout(() => {
+    slideshow.classList.remove('active');
+    showSlide(currentSlide);
+  }, 0);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentSlide++;
+  if (currentSlide > videos.length - 1) {
+    currentSlide = 0;
+  }
+  slideshow.classList.add('active');
+  setTimeout(() => {
+    slideshow.classList.remove('active');
+    showSlide(currentSlide);
+  }, 0);
+});
+
+    </script>
 
     <script src="character_assets/animasi.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
