@@ -15,7 +15,7 @@ const gameBoard = document.getElementById("game-board");
 function main(currentTime) {
   if (gameOver) {
     if (confirm("Yahh kalah :( Tekan OK buat main lagiii")) {
-      window.location = "/";
+      window.location = "main_game.html";
     }
     return;
   }
