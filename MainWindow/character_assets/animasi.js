@@ -20,7 +20,7 @@ $(document).ready(function () {
       });
       image.attr("src", originalImg);
       clearInterval(intervalId);
-    }, 1200);
+    }, 2200);
   });
 
   $("#tidur").on("click", function () {
