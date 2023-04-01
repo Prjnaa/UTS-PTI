@@ -1,52 +1,51 @@
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 html {
-   max-height: 100vh; 
+  max-height: 100vh;
 }
 
 body {
-    width: 100%;
-    display: grid;
-    place-items: center;
-    
-    background-color: darkolivegreen;
+  width: 100%;
+  display: grid;
+  place-items: center;
+
+  background-color: darkolivegreen;
 }
 
 #container {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 
-    height: 100vh;
-    width: fit-content;
-    position: absolute;
-    top: 0vh;
-
+  height: 100vh;
+  width: fit-content;
+  position: absolute;
+  top: 0vh;
 }
 
 /* character style */
 #character_container {
-    position: relative;
-    display: grid;
-    place-items: center;
-    
-    width: 100%;
-    height: 180%;
-    border-radius: .75rem;
-    border: .3rem solid white;
+  position: relative;
+  display: grid;
+  place-items: center;
 
-    z-index: 1;
+  width: 100%;
+  height: 180%;
+  border-radius: 0.75rem;
+  border: 0.3rem solid white;
+
+  z-index: 1;
 }
 
-#character_container #gambar{
-    top: 55%;
-    z-index: 2;
+#character_container #gambar {
+  top: 55%;
+  z-index: 2;
 }
 
-#character_container video{
-position: absolute;
+#character_container video {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -57,45 +56,47 @@ position: absolute;
 }
 
 #gambar {
-    position: absolute;
-    animation-name: idle;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(2);
+  position: absolute;
+  animation-name: idle;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(2);
 }
 
 @keyframes idle {
-    100% {
-        transform: scaleX(-1);
-    }
+  100% {
+    transform: scaleX(-1);
+  }
 }
 
 /* button style */
 #action_button {
-    text-align: center;
+  text-align: center;
 }
 
-#action_button button{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid white;
-    color: white;
-    
-    background-color: transparent;
-    border-radius: 20px;
+#action_button button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid white;
+  color: white;
 
-    width: 150px;
-    height: 55px;
-    margin: 10px 10px;
+  background-color: transparent;
+  border-radius: 20px;
+
+  width: 150px;
+  height: 55px;
+  margin: 10px 10px;
 }
 
 #action_button button:hover,
 #action_button button:focus {
-    background-color: white;
-    color: black;
-    transition-duration: 250ms;
+  background-color: white;
+  color: black;
+  transition-duration: 250ms;
 }
 
-
-
+#gambar {
+  width: 120px;
+  margin-top: -20px;
+}
