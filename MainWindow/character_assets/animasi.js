@@ -10,33 +10,48 @@ $(document).ready(function () {
       "character_assets/Scene - Yellow Character/(Scene) Eat Burger/Versi Gif.gif"
     );
     image.css({
-      transform: "scale(1.3)",
-      "margin-top": "-5px",
+      transform: "scale(1.25)",
+      "margin-top": "0px","right":"39%"
     });
     intervalId = setInterval(function () {
       image.css({
         transform: "scale(1)",
-        "margin-top": "-20px",
+        "margin-top": "-20px","right":"41%"
       });
       image.attr("src", originalImg);
       clearInterval(intervalId);
-    }, 2200);
+    }, 1200);
   });
 
   $("#tidur").on("click", function () {
+    clearInterval(intervalId);
     image.attr(
       "src",
-      "../Select_Character/bg_assetChar/Scene - Yellow Character/(Scene) Sleep/Versi Gif.gif"
+      "character_assets/Yellow Character/Anak/Tidur.gif"
     );
+    image.css({
+      transform: "scale(1.75)","right":"37%"
+    });
+    intervalId = setInterval(function () {
+      image.css({
+        transform: "scale(1)", "right": "41%"
+        
+      });
+      image.attr("src", originalImg);
+      clearInterval(intervalId);
+    }, 3000);
   });
 
   $("#obat").on("click", function () {
     clearInterval(intervalId);
     image.attr(
       "src",
-      "character_assets/Scene - Yellow Character/(Scene) Minum Obat/Versi gif.gif"
+      "character_assets/Yellow Character/Anak/Minum Obat.gif"
     );
-    image.css("transform", `scale(1.5)`);
+    image.css({
+      transform: "scale(1.45)",
+      "margin-top": "-18px","right":"40%"
+    });
     intervalId = setInterval(function () {
       image.css("transform", `scale(1)`);
       image.attr("src", originalImg);
@@ -45,9 +60,6 @@ $(document).ready(function () {
   });
 
   $("#main").on("click", function () {
-    image.attr(
-      "src",
-      "../Select_Character/bg_assetChar/Scene - Yellow Character/(Scene) Play (2)/Versi Gif.gif"
-    );
+    window.location.href = "../coba_main_game/index.html"
   });
 });
