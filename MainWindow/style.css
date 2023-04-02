@@ -32,26 +32,10 @@
 }
 
 #bg_vid {
-  border-radius: 30px;
+  border-radius: 1rem;
 }
 
 /* stats */
-
-#stats_container_outer {
-  border: 2px solid white;
-  background-color: rgba(95, 95, 95, 0.411);
-  display: flex;
-  width: 40%;
-  border-radius: 50px;
-  transform: translate(0%,-100%);
-}
-
-#stats_container_inner {
-  margin-left: 20%;
-  margin-right: 10px;
-  width: 60%;
-  justify-content: space-around;
-}
 
 .stat {
   width: 20px;
@@ -156,13 +140,6 @@
 }
 
 /* level section css */
-#level {
-  margin: auto 10px   ;
-  border: 2px solid green;
-  padding:  5px 5px;
-  border-radius: 35px;
-}
-
 #level p {
   font-size: 18px;
   color: rgb(255, 255, 255);
