@@ -11,12 +11,12 @@ $(document).ready(function () {
     );
     image.css({
       transform: "scale(1.25)",
-      "margin-top": "0px","right":"42.5%"
+      "margin-top": "0px","right":"39%"
     });
     intervalId = setInterval(function () {
       image.css({
         transform: "scale(1)",
-        "margin-top": "-20px","right":"43.5%"
+        "margin-top": "-20px","right":"41%"
       });
       image.attr("src", originalImg);
       clearInterval(intervalId);
@@ -30,11 +30,11 @@ $(document).ready(function () {
       "character_assets/Yellow Character/Anak/Tidur.gif"
     );
     image.css({
-      transform: "scale(1.75)","right":"39  %","margin-top":"-20px"
+      transform: "scale(1.75)","right":"37%","margin-top":"-20px"
     });
     intervalId = setInterval(function () {
       image.css({
-        transform: "scale(1)", "right": "43.5%","margin-top":"-20px"
+        transform: "scale(1)", "right": "41%","margin-top":"-20px"
         
       });
       image.attr("src", originalImg);
@@ -50,7 +50,7 @@ $(document).ready(function () {
     );
     image.css({
       transform: "scale(1.45)",
-      "margin-top": "-18px","right":"43.5%"
+      "margin-top": "-18px","right":"41%"
     });
     intervalId = setInterval(function () {
       image.css("transform", `scale(1)`);
