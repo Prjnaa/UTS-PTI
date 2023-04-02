@@ -3,7 +3,7 @@ window.onload = function() {
   let minutes = 0;
   let seconds = 0;
   let lastTime = null;
-  let duration = 1;
+  let duration = 15;
 
   let savedTime = localStorage.getItem('savedTime');
   if (savedTime) {
