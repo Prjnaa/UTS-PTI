@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
+=======
+  <head>
+    <title>Snake Game</title>
+    <style>
+      canvas {
+        border: 1px solid #000;
+        margin: left 200px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      function restartGame() {
+      location.reload();
+  }
+
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="1000" height="400"></canvas>
+    <button onclick="restartGame()">Restart Game</button>
+    <script>
+      // Variabel yang dibutuhkan
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+      var snake = [];
+      var snakeLength = 5;
+      var direction = "right";
+      var food = {};
+      var score = 0;
+      var snakeImage = new Image();
+      snakeImage.src = "Game.gif";
+>>>>>>> 4ea659de0cb3520ce092f0fa0fbce82d34e1da58
 
 <head>
   <title>Snake Game</title>
