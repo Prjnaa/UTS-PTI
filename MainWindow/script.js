@@ -1,7 +1,15 @@
+let isAnimating = false;
+
 function changeImage(action) {
+    if (isAnimating) {
+        return;
+    }
+
     const image = $("#gambar");
     const originalImg = image.attr("src");
     let intervalId = null;
+
+    isAnimating = true;
   
     switch (action) {
         
@@ -20,6 +28,7 @@ function changeImage(action) {
           });
           image.attr("src", originalImg);
           clearInterval(intervalId);
+          isAnimating = false;
         }, 2200);
         break;
 
@@ -38,6 +47,7 @@ function changeImage(action) {
           });
           image.attr("src", originalImg);
           clearInterval(intervalId);
+          isAnimating = false;
         }, 2200);
         break;
       case "obat":
@@ -47,7 +57,7 @@ function changeImage(action) {
           "character_assets/Yellow Character/Anak/Minum Obat.gif"
         );
         image.css({
-            transform:"scale(1.1) translate(-35%,-10%)"
+            transform:"scale(1.17) translate(-35%, -7%)"
         });
         intervalId = setInterval(function () {
           image.css({
@@ -55,6 +65,7 @@ function changeImage(action) {
           });
           image.attr("src", originalImg);
           clearInterval(intervalId);
+          isAnimating = false;
         }, 2200);
         break;
       case "main":
@@ -72,10 +83,10 @@ function changeImage(action) {
           });
           image.attr("src", originalImg);
           clearInterval(intervalId);
+          isAnimating = false;
         }, 2200);
         break;
       default:
         break;
     }
-  }
-  
+}

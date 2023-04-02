@@ -17,13 +17,11 @@
     background-color: transparent;
     border-radius: 20px;
 
-    width: 130px;
+    width: 150px;
     height: 55px;
-    margin: 10px 10px;
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
   background-color: white;
   color: black;
   transition-duration: 250ms;
