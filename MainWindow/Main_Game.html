@@ -5,39 +5,45 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh; background-color: grey;">
-      <div class="row" style="width: 100%;">
-        <div class="col-md-12">
-          <div class="container" style="max-width: 70%; border: 2px solid black;">
-            <div class="embed-responsive embed-responsive-16by9 position-relative">
-              <img src="character_assets/Scene - Yellow Character/(Scene) Lain/Versi gif/BERDIRI.gif" class="position-absolute" id="gambar" style="max-width: 100%; max-height: 40%; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 2;">
-              <video class="embed-responsive-item" src="bg_assets/MORNING LIVING ROOM.mp4" style="object-fit: cover; z-index: 1;"></video>
+    <div class="container-fluid p-0">
+        <div class="d-flex justify-content-center align-items-center" style="height: 100vh; background-color: grey;">
+            <div class="row" style="width: 100%;">
+                <div class="col-md-12">
+                    <div class="container" style="max-width: 70%; border: 2px solid black;">
+                        <div class="embed-responsive embed-responsive-16by9 position-relative">
+                            <img src="character_assets/Scene - Yellow Character/(Scene) Lain/Versi gif/BERDIRI.gif" class="position-absolute" id="gambar" style="max-width: 100%; max-height: 40%; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 2;">
+                            <video class="embed-responsive-item" src="bg_assets/MORNING LIVING ROOM.mp4" style="object-fit: cover; z-index: 1;"></video>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="container p-0" style="max-width: 70%; border: 2px solid black;">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-3 col-sm-6">
+                                    <button onclick="changeImage('makan')" class="button" class="button" id="makan">Makan</button>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <button onclick="changeImage('tidur')" class="button" class="button" id="tidur">Tidur </button>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <button onclick="changeImage('obat')" class="button" class="button" id="obat">Obat</button>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 ">
+                                    <button onclick="changeImage('main')" class="button" class="button" id="main">Main</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
-          </div>
         </div>
-
-        <div class="col-md-12 mt-3">
-          <div class="container" style="max-width: 70%; border: 2px solid black;">
-            <div class="button-container d-flex justify-content-center">
-              <div class="row w-100">
-                  <button onclick="changeImage('makan')" class=" button col-md-3 col-sm-6" class="button" id="makan">Makan</button>
-                  <button onclick="changeImage('tidur')" class="button col-md-3 col-sm-6" class="button" id="tidur">Tidur </button>
-                  <button onclick="changeImage('obat')" class="button col-md-3 col-sm-6" class="button" id="obat">Obat</button>
-                  <button onclick="changeImage('main')" class="button col-md-3 col-sm-6" class="button" id="main">Main</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        </div>
-      </div>
-
     </div>
 
     <script src="script.js"></script>      
