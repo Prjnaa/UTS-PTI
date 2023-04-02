@@ -3,7 +3,11 @@
     padding: 0;
 }
 
-
+#stats {
+  height: 70px;
+  position: relative;
+  border-radius: 50px;
+}
 
 .button{
     text-align: center;
@@ -15,7 +19,7 @@
     color: white;
 
     background-color: transparent;
-    border-radius: 20px;
+    border-radius: 25px;
 
     width: 160px;
     height: 60px;
@@ -27,6 +31,9 @@
   transition-duration: 250ms;
 }
 
+#bg_vid {
+  border-radius: 30px;
+}
 
 /* stats */
 
