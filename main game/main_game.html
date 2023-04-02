@@ -135,15 +135,19 @@
         }
 
         .snake-body {
+            background-image: url("Game.gif");
+            /* mengganti background hijau dengan gif */
+            background-repeat: no-repeat;
+            background-size: contain;
             z-index: 5;
             position: relative;
-            background: #00ff00;
-            box-shadow: 0 0 7px #00ff00, 0 0 20px #00ff00;
         }
 
         .food {
-            background: #ff0000;
-            box-shadow: 0 0 10px #ff0000, 0 0 40px #ff0000, 0 0 80px #ff0000;
+            background-image: url("bintang.png");
+            /* mengganti warna background merah dengan gambar */
+            background-repeat: no-repeat;
+            background-size: contain;
         }
     </style>
     <div class="container" onclick='document.getElementById("txt").focus();'>
