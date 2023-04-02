@@ -22,8 +22,7 @@
     margin: 10px 10px;
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
   background-color: white;
   color: black;
   transition-duration: 250ms;
