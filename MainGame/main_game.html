@@ -162,6 +162,7 @@
     <input style="opacity:0;width:0;height:0" id="txt" type="text">
 
     <script>
+        var score = 0
         var snakeBody, food, direction, allowedToMove, isPlaying;
         var map;
         var speed = 2;
@@ -202,7 +203,10 @@
             }
             // Placing food on the map
             map.children[food].classList.add("food");
+            score++; // Increase the score
+            document.getElementById("score").innerText = "Score: " + score; // Update the score on the screen
         }
+
 
         function startGame() {
             if (!isPlaying) {
@@ -230,13 +234,14 @@
             clearInterval(play);
             document.getElementById("menu-text").innerText =
                 "Game Over\nYour Score: " +
-                (snakeBody.length - 1) +
+                score + // Show the score
                 "\nPress ENTER to restart";
             document.getElementById("menu").style.display = "";
             document.getElementById("map").style.display = "none";
             map.innerText = ""; // Clearing the map
             initializeGameState(map.id); // Re-generating the map
         }
+
 
         function updatePosition() {
             var newPosR, newPosC;
@@ -346,6 +351,7 @@
 
         initializeGameState("map");
     </script>
+
 </body>
 
 </html>
