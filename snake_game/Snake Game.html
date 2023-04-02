@@ -9,16 +9,11 @@
         display: block;
         margin: 0 auto;
       }
-
-      function restartGame() {
-      location.reload();
-  }
-
     </style>
   </head>
   <body>
     <canvas id="canvas" width="1000" height="400"></canvas>
-    <button onclick="restartGame()">Restart Game</button>
+    <button id="restart-button">Restart Game</button>
     <script>
       // Variabel yang dibutuhkan
       var canvas = document.getElementById("canvas");
@@ -30,6 +25,7 @@
       var score = 0;
       var snakeImage = new Image();
       snakeImage.src = "Game.gif";
+      
 
       function drawSnake() {
     for (var i = 0; i < snake.length; i++) {
@@ -48,7 +44,6 @@
     img.src = "bintang.png";
     context.drawImage(img, food.x, food.y, 70, 50);
         }
-
 
       // Fungsi untuk menggerakkan snake
       function moveSnake() {
@@ -111,10 +106,24 @@
 
       // Fungsi untuk menghasilkan makanan secara acak
       function generateFood() {
-        var x = Math.floor(Math.random() * (canvas.width / 20)) * 20;
-        var y = Math.floor(Math.random() * (canvas.height / 20)) * 20;
-        food = { x: x, y: y };
-      }
+  var x = Math.floor(Math.random() * (canvas.width / 20)) * 20;
+  var y = Math.floor(Math.random() * (canvas.height / 20)) * 20;
+  
+  // Batas koordinat x dan y
+  var maxX = canvas.width - 70; // ukuran gambar bintang
+  var maxY = canvas.height - 50; // ukuran gambar bintang
+  
+  // Memastikan nilai x dan y berada di dalam batas koordinat
+  if (x > maxX) {
+    x = maxX;
+  }
+  if (y > maxY) {
+    y = maxY;
+  }
+  
+  food = { x: x, y: y };
+}
+
 
      // Fungsi untuk menggambar skor
 function drawScore() {
@@ -139,13 +148,17 @@ context.fillText("Score: " + score, 10, 30);
 
     // Memeriksa tabrakan dengan dinding
     if (checkWallCollision()) {
-      alert("Game Over!");
-      location.reload();
+      // Cek apakah objek berada di luar batas layar
+    if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
+    // Jika objek berada di luar batas layar, maka game over
+    gameover();
+    location.reload();
+    }
+
     }
 
     // Memeriksa tabrakan dengan tubuh snake
     if (checkBodyCollision()) {
-      alert("Game Over!");
       location.reload();
     }
 
@@ -190,9 +203,34 @@ context.fillText("Score: " + score, 10, 30);
     }
   });
 
+  // Mendapatkan tombol restart
+var restartButton = document.getElementById("restart-button");
+
+// Menambahkan event listener pada tombol restart
+restartButton.addEventListener("click", restart);
+
+// Fungsi untuk me-restart game
+function restart() {
+  // Mengembalikan variabel ke nilai awal
+  snake = [];
+  snakeLength = 5;
+  direction = "right";
+  score = 0;
+  generateFood();
+
+  // Menyembunyikan tombol restart
+  restartButton.style.display = "none";
+
+  // Memulai game loop kembali
+  gameLoop();
+}
+
+
   // Memanggil fungsi init dan menjalankan game loop setiap 100ms
   init();
   setInterval(gameLoop, 100);
+
+  
 </script>
 
 </body>
