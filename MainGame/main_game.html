@@ -175,6 +175,7 @@
             direction = "Right";
             allowedToMove = false;
             isPlaying = false;
+            ateFood = false;
         }
 
         // Creating the map and initializing variables
@@ -293,7 +294,7 @@
                 // If snake eats the food
                 if (head == food) {
                     map.children[food].classList.remove("food");
-                    snakeBody.unshift(tailArray);
+
                     // Checking if the snake reached its max size
                     snakeBody.length == 100 && gameOver();
                     generateFood();
