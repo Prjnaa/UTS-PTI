@@ -6,68 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Snake</title>
-    <style>
-        body {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            background-color: black;
-        }
-
-        #game-board {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-rows: repeat(21, 1fr);
-            grid-template-columns: repeat(21, 1fr);
-        }
-
-        .snake {
-            background-image: url("Char1.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-
-        .food {
-            width: 100%;
-            height: 100%;
-            background-image: url("star.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            display: grid;
-            grid-template-rows: repeat(21, 1fr);
-            grid-template-columns: repeat(21, 1fr);
-            object-fit: cover;
-        }
-    </style>
-    <script src="game.js" defer type="module"></script>
-</head>
-
-<body>
-    <video src="bg_asset.mp4" loop muted autoplay ></video>
-    <audio src="backsound_game.mp3" loop autoplay></audio>
-    <div id="game-board"></div>
-</body>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Snake Game</title>
-</head>
 
 <body>
     <style>
@@ -91,6 +29,8 @@
         }
 
         .container {
+            background-color: wheat;
+            border-radius: 10px;
             max-width: 90vmin;
             max-height: 90vmin;
             width: 100%;
@@ -108,7 +48,8 @@
         }
 
         #menu {
-            background: #aa00ff;
+            background: wheat;
+            border-radius: 5px;
         }
 
         .menu-item {
@@ -123,10 +64,16 @@
         }
 
         #menu-text {
+            color: #333;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
+            font-size: 28px;
             text-align: center;
             line-height: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
         }
 
         .pixel {
@@ -137,7 +84,6 @@
 
         .snake-body {
             background-image: url("Game.gif");
-            /* mengganti background hijau dengan gif */
             background-repeat: no-repeat;
             background-size: contain;
             z-index: 5;
@@ -146,15 +92,18 @@
 
         .food {
             background-image: url("bintang.png");
-            /* mengganti warna background merah dengan gambar */
             background-repeat: no-repeat;
             background-size: contain;
         }
     </style>
+
+    <audio src="backsound_game.mp3" loop></audio>
+    <div id="game-board"></div>
+
     <div class="container" onclick='document.getElementById("txt").focus();'>
         <div id="menu">
             <div class="menu-item">
-                <span id="menu-text">Press ENTER to start the game</span>
+                <span id="menu-text">Press enter<br>to start the game</span>
             </div>
         </div>
         <div id="map" style="display: none;">
@@ -163,14 +112,23 @@
     <input style="opacity:0;width:0;height:0" id="txt" type="text">
 
     <script>
-        var score = 0
+        var score = -1;
         var snakeBody, food, direction, allowedToMove, isPlaying;
         var map;
         var speed = 2;
         var play;
         var bgMusic = document.getElementsByTagName("audio")[0];
 
+        document.getElementById("txt").addEventListener("keydown", function (event) {
+            if (event.keyCode === 13) {
+                bgMusic.play();
+                startGame();
+            }
+        });
+
+
         function initializeVariables() {
+            score = -1; // Add this line to reset the score
             snakeBody = [
                 [0, 0]
             ];
@@ -178,8 +136,10 @@
             direction = "Right";
             allowedToMove = false;
             isPlaying = false;
-            ateFood = false;
+            ateFood = false; // Initialize the variable
         }
+
+
 
         // Creating the map and initializing variables
         function initializeGameState(mapElementId) {
@@ -244,7 +204,6 @@
             initializeGameState(map.id); // Re-generating the map
         }
 
-
         function updatePosition() {
             var newPosR, newPosC;
             var head = snakeBody[snakeBody.length - 1];
@@ -301,7 +260,7 @@
                 // If snake eats the food
                 if (head == food) {
                     map.children[food].classList.remove("food");
-
+                    ateFood = true;
                     // Checking if the snake reached its max size
                     snakeBody.length == 100 && gameOver();
                     generateFood();
