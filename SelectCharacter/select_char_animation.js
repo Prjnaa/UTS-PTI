@@ -23,44 +23,47 @@ var swiper = new Swiper(".slide-content", {
     },
   });
 
-  var video = document.getElementById("bg-video");
-  var startButton = document.getElementById("button1");
-  var card = document.getElementsByClassName("slide-container")[0];
+  var startButton1 = document.getElementById("button1");
   var startButton2 = document.getElementById("button2");
-
-  startButton.onclick = function() {
-    video.play();
+  
+  startButton1.onclick = function() {
+    // Tambahkan class fade-out ke container slide saat keluar
+    document.querySelector('.slide-container').classList.add('fade-out');
+  
+    // Setelah 0.5 detik, pindah ke halaman 2
     setTimeout(function() {
-      card.style.display = "none";
-    }, 100);
-
-    video.addEventListener('ended', function() {
-      video.currentTime = 0;
-      video.pause();
-      startButton.style.opacity = 0;
-      startButton.style.pointerEvents = 'none';
-      setTimeout(function() {
-      startButton.style.display = "none";
-    }, 100);
-    window.location.href = "/MainWindow/main.html";
-  }, false);
-}
-
+      window.location.href = "../maingame_green/Main_Game.html";
+    }, 0);
+  }
   
   startButton2.onclick = function() {
-    video.play();
+    // Tambahkan class fade-out ke container slide saat keluar
+    document.querySelector('.slide-container').classList.add('fade-out');
+  
+    // Setelah 0.5 detik, pindah ke halaman 3
     setTimeout(function() {
-      card.style.display = "none";
-    }, 100);
-
-    video.addEventListener('ended', function() {
-      video.currentTime = 0;
-      video.pause();
-      startButton.style.opacity = 0;
-      startButton.style.pointerEvents = 'none';
-      setTimeout(function() {
-      startButton.style.display = "none";
-    }, 100);
-    window.location.href = "/MainWindow/main.html"; 
+      window.location.href = "../maingame_yellow/Main_Game.html";
+    }, 0);
+  }
+  
+  // Jika halaman dimuat dengan animasi fade-in
+  document.addEventListener('DOMContentLoaded', function() {
+    // Tambahkan class fade-in ke container slide saat masuk
+    document.querySelector('.slide-container').classList.add('fade-in');
   });
-};
+  
+  // Setelah animasi fade-out selesai, hapus class fade-out dan tambahkan class fade-in
+  document.querySelector('.slide-container').addEventListener('animationend', function(event) {
+    if (event.animationName === 'fadeOut') {
+      this.classList.remove('fade-out');
+      this.classList.add('fade-in');
+    }
+  });
+  
+  // Setelah animasi fade-in selesai, hapus class fade-in
+  document.querySelector('.slide-container').addEventListener('animationend', function(event) {
+    if (event.animationName === 'fadeIn') {
+      this.classList.remove('fade-in');
+    }
+  });
+  

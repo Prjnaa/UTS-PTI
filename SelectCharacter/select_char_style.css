@@ -138,48 +138,18 @@ body {
     display: none;
   }
 }
-#video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
 
-#video-background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-  text-align: center;
-  color: black;
-}
-
-#fade-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
+.fade-out {
   opacity: 0;
-  z-index: 2;
+  transition: opacity 0.5s ease-out;
   animation-name: fade-out;
-  animation-duration: 2s;
-}
+  }
+  
+  .fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+  animation-name: fade-in;
+  }
 
 @keyframes fade-out {
   100% {
@@ -187,5 +157,14 @@ body {
   }
   0% {
     opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
   }
 }
