@@ -65,22 +65,9 @@ function changeImage(action) {
       }, 3800);
       break;
     case "main":
-      clearInterval(intervalId);
-      image.attr(
-        "src",
-        "character_assets/Yellow Character/Anak/Jalan atau Lari.gif"
-      );
-      image.css({
-        transform: "scale(1.1) translate(-35%,-10%)",
-      });
-      intervalId = setInterval(function () {
-        image.css({
-          transform: "scale(1) translate(-50%,0%)",
-        });
-        image.attr("src", originalImg);
-        clearInterval(intervalId);
-        isAnimating = false;
-      }, 2200);
+      setTimeout(function() {
+        window.location.href = "../MainGame/main_game.html";
+      }, 0);
       break;
     default:
       break;
