@@ -16,7 +16,7 @@ function changeImage(action) {
       clearInterval(intervalId);
       image.attr(
         "src",
-        "character_assets/Green Character/Anak/Makan Burger.gif"
+        "character_assets/Green Character/Bayi/Minum Susu.gif"
       );
       image.css({
         transform: "scale(1.2) translate(-28%,-8%)",
@@ -28,12 +28,12 @@ function changeImage(action) {
         image.attr("src", originalImg);
         clearInterval(intervalId);
         isAnimating = false;
-      }, 2300);
+      }, 5200);
       break;
 
     case "tidur":
       clearInterval(intervalId);
-      image.attr("src", "character_assets/Green Character/Anak/Tidur.gif");
+      image.attr("src", "character_assets/Green Character/Bayi/Tidur.gif");
       image.css({
         transform: "scale(1.23) translate(-27%,-9%)",
       });
@@ -44,13 +44,13 @@ function changeImage(action) {
         image.attr("src", originalImg);
         clearInterval(intervalId);
         isAnimating = false;
-      }, 3300);
+      }, 4000);
       break;
     case "obat":
       clearInterval(intervalId);
       image.attr(
         "src",
-        "character_assets/Green Character/Anak/Minum Obat.gif"
+        "character_assets/Green Character/Bayi/Minum Susu.gif"
       );
       image.css({
         transform: "scale(1.2) translate(-30%, -7%)",
@@ -62,7 +62,7 @@ function changeImage(action) {
         image.attr("src", originalImg);
         clearInterval(intervalId);
         isAnimating = false;
-      }, 3800);
+      }, 5200);
       break;
     case "main":
       setTimeout(function() {
@@ -73,3 +73,17 @@ function changeImage(action) {
       break;
   }
 }
+
+$(document).ready(function(){
+  $('.slick-carousel').slick({
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  });
+});
+
