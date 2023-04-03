@@ -15,7 +15,7 @@
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
-    border: 2px solid white;
+    border: 3px solid white;
     color: white;
 
     background-color: transparent;
@@ -31,12 +31,19 @@
   transition-duration: 250ms;
 }
 
+#char_container{
+  border: .75rem solid white;
+  aspect-ratio: 15/9;
+  border-radius: .5rem;
+  position: relative;
+  z-index: 1;
+}
 #bg_vid {
-  border-radius: 1rem;
+  position: absolute;
+  object-fit: cover;
 }
 
 /* stats */
-
 .stat {
   width: 20px;
   height: auto;
