@@ -6,6 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,7 +21,7 @@
             <div class="row" style="width: 100%;">
                 <!-- stats container -->
                 <div class="col-12 my-4">
-                    <div id="stats" class="container p-0" style="max-width: 55%; border: 2px solid white;">
+                    <div id="stats" class="container p-0" style="max-width: 55%; border: .25rem solid white;">
                         <div class="row align-items-center">
                             <div id="level_container" class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="d-flex justify-content-lg-start justify-content-center">
@@ -57,12 +58,12 @@
                         </div>
                     </div>
                     <!-- stats reset button -->
-                    <button id="reset-button">Reset stats</button>
+                    <!-- <button id="reset-button">Reset stats</button> -->
                 </div>
 
                 <!-- character container -->
                 <div class="col-md-12">
-                    <div class="container " style="max-width: 900px; border: 2px solid black;">
+                    <div class="container " style="max-width: 55%;">
                         <div id="char_container" class="embed-responsive embed-responsive-16by9 position-relative">
                             <img src="character_assets/Green Character/Anak/Berdiri.gif" class="position-absolute"
                                 id="gambar"
@@ -74,7 +75,7 @@
                 </div>
                 <!-- button container -->
                 <div id="button_container" class="col-12 mt-3">
-                    <div class="container p-0" style="max-width: 900px; border: 2px solid black;">
+                    <div class="container p-0" style="max-width: 55%;">
                         <div class="row d-flex">
                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center mt-1 mb-1">
                                 <button onclick="changeImage('makan')" class="button" class="button"
@@ -101,6 +102,7 @@
     </div>
     </div>
 
+    <script src="main_game.js"></script>
     <script src="stats_bar_component/stats_behave.js"></script>
     <script src="stats_bar_component/clock.js"></script>
     <script src="character_assets/char_animate.js"></script>      
