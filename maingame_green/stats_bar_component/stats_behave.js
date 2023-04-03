@@ -152,7 +152,7 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   var level = 1; // level awal
   var maxLevel = 6; // level maksimum
   var eatCount = 0; // jumlah makan
@@ -160,10 +160,11 @@ $(document).ready(function() {
 
   var eatCount = 0; // jumlah pemencetan tombol makan
   var sleepCount = 0; // jumlah pemencetan tombol tidur
-  
-  $('#makan').click(function() {
+
+  $("#makan").click(function () {
     eatCount++;
-    if (eatCount == 5 && sleepCount == 2) { // setelah makan 5 kali dan tidur 2 kali, naik level
+    if (eatCount == 5 && sleepCount == 2) {
+      // setelah makan 5 kali dan tidur 2 kali, naik level
       eatCount = 0;
       sleepCount = 0;
       level++;
@@ -171,38 +172,38 @@ $(document).ready(function() {
       updateLevel(); // memperbarui tampilan level
     }
   });
-  
-  $('#tidur').click(function() {
+
+  $("#tidur").click(function () {
     sleepCount++;
-    if (eatCount == 5 && sleepCount == 2) { // setelah makan 5 kali dan tidur 2 kali, naik level
+    if (eatCount == 5 && sleepCount == 2) {
+      // setelah makan 5 kali dan tidur 2 kali, naik level
       eatCount = 0;
       sleepCount = 0;
       level++;
       updateLevel(); // memperbarui tampilan level
     }
   });
-  
 
   function updateLevel() {
-    $('#level_curr').text(level); // memperbarui teks level
+    $("#level_curr").text(level); // memperbarui teks level
 
     // menghapus kelas full dan half, lalu menambahkan kelas yang sesuai
-    $('#level_bar').removeClass('full half').addClass(getLevelClass(level));
+    $("#level_bar").removeClass("full half").addClass(getLevelClass(level));
   }
 
   function getLevelClass(level) {
     switch (level) {
       case 1:
       case 4:
-        return ''; // kosong
+        return ""; // kosong
       case 2:
       case 5:
-        return 'half'; // setengah level
+        return "half"; // setengah level
       case 3:
       case 6:
-        return 'full'; // level penuh
+        return "full"; // level penuh
       default:
-        return '';
+        return "";
     }
   }
 });
