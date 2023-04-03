@@ -58,7 +58,8 @@
 </head>
 
 <body>
-    <video src="bg_asset.mp4" loop muted autoplay></video>
+    <video src="bg_asset.mp4" loop muted autoplay ></video>
+    <audio src="backsound_game.mp3" loop autoplay></audio>
     <div id="game-board"></div>
 </body>
 <!DOCTYPE html>
@@ -167,6 +168,7 @@
         var map;
         var speed = 2;
         var play;
+        var bgMusic = document.getElementsByTagName("audio")[0];
 
         function initializeVariables() {
             snakeBody = [
