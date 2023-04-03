@@ -165,7 +165,7 @@ $(document).ready(function () {
     happy = maxhappy;
     $("#happy_filler").animate({ top: "0px" }, 500);
     let timeout = setTimeout(function () {
-      window.location.href = "../bermain_game_yelow/main_game.html";
+      window.location.href = "../bermain_game_yellow/main_game.html";
     }, 650);
   });
 
