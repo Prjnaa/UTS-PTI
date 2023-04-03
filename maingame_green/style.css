@@ -177,6 +177,16 @@ body.loaded {
   height: 40px;
   margin-left: 10px;
   border-radius: 180px;
+  background-color: #ffffff; /* awal level kosong */
+  transition: all 0.5s ease; /* animasi perubahan level */
+}
+
+#level_bar.full {
+  background-color: #32CD32; /* level penuh */
+}
+
+#level_bar.half {
+  background-color: #FFFF00; /* setengah level */
 }
 
 #level_curr {
@@ -184,6 +194,7 @@ body.loaded {
   font-weight: bold;
   padding: 2px 1px 2px 1px;
 }
+
 
 #clock {
   color: rgb(148, 51, 34);
