@@ -1,4 +1,4 @@
-$(document).ready(function (){
+
   const maxhealth = 100;
   const maxenergy = 100;
   const maxhunger = 100;
@@ -8,7 +8,7 @@ $(document).ready(function (){
   let energy = maxenergy;
   let hunger = maxhunger;
   let happy = maxhappy;
-});
+
   
 // health
 $(document).ready(function () {
