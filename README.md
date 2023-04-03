@@ -1,5 +1,9 @@
 # GAME-UTS-PROJECT
-Kelompok : Hosea
-           Mesaya
-           Ben
-           Prajna
+
+Kelompok Eternals :
+Hosea (00000070562)
+Christopher Mesaya (00000070524)
+Benedick Christopher Bamba (00000071174)
+Prajna Ananda Citra (00000070561)
+
+Link GitHub : https://github.com/Prjnaa/UTS-PTI.git
