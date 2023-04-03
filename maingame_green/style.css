@@ -1,6 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 #stats {
@@ -9,20 +9,20 @@
   border-radius: 50px;
 }
 
-.button{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid white;
-    color: white;
+.button {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 3px solid white;
+  color: white;
 
-    background-color: transparent;
-    border-radius: 25px;
+  background-color: transparent;
+  border-radius: 25px;
 
-    width: 160px;
-    height: 60px;
+  width: 160px;
+  height: 60px;
 }
 
 .button:hover {
@@ -31,12 +31,19 @@
   transition-duration: 250ms;
 }
 
+#char_container {
+  border: 0.75rem solid white;
+  aspect-ratio: 15/9;
+  border-radius: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
 #bg_vid {
-  border-radius: 1rem;
+  position: absolute;
+  object-fit: cover;
 }
 
 /* stats */
-
 .stat {
   width: 20px;
   height: auto;
@@ -129,21 +136,21 @@
 /* flowing animation */
 @keyframes flow {
   0% {
-      transform: translateX(-50%) rotate(0deg);
+    transform: translateX(-50%) rotate(0deg);
   }
   50% {
-      transform: translateX(-50%) rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
   }
   100% {
-      transform: translateX(-50%) rotate(720deg);
+    transform: translateX(-50%) rotate(720deg);
   }
 }
 
 /* level section css */
 #level {
-  margin: 10px 10px   ;
+  margin: 10px 10px;
   border: 2px solid green;
-  padding:  5px 5px;
+  padding: 5px 5px;
   border-radius: 35px;
 }
 
@@ -172,5 +179,5 @@
 #clock {
   color: white;
   font-size: 30px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }

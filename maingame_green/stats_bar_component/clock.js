@@ -1,11 +1,11 @@
-window.onload = function() {
+window.onload = function () {
   let hours = 0;
   let minutes = 0;
   let seconds = 0;
   let lastTime = null;
   let duration = 15;
 
-  let savedTime = localStorage.getItem('savedTime');
+  let savedTime = localStorage.getItem("savedTime");
   if (savedTime) {
     let savedDate = new Date(savedTime);
     hours = savedDate.getHours();
@@ -38,21 +38,22 @@ window.onload = function() {
       let hoursString = hours < 10 ? "0" + hours : hours;
       let minutesString = minutes < 10 ? "0" + minutes : minutes;
 
-      document.getElementById('clock').innerHTML = hoursString + ":" + minutesString;
+      document.getElementById("clock").innerHTML =
+        hoursString + ":" + minutesString;
 
       let currentDate = new Date();
-      localStorage.setItem('savedTime', currentDate);
+      localStorage.setItem("savedTime", currentDate);
     }
 
     requestAnimationFrame(updateClock);
   }
 
-  document.addEventListener('visibilitychange', function() {
-      if (document.hidden) {
-          cancelAnimationFrame(requestAnimationFrame(updateClock));
-      } else {
-          requestAnimationFrame(updateClock);
-      }
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      cancelAnimationFrame(requestAnimationFrame(updateClock));
+    } else {
+      requestAnimationFrame(updateClock);
+    }
   });
 
   requestAnimationFrame(updateClock);

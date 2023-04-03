@@ -24,6 +24,7 @@ body {
   overflow: hidden;
   border-radius: 25px;
 }
+
 .card {
   border-radius: 25px;
   background-color: #fff;
@@ -143,13 +144,13 @@ body {
   opacity: 0;
   transition: opacity 0.5s ease-out;
   animation-name: fade-out;
-  }
-  
-  .fade-in {
+}
+
+.fade-in {
   opacity: 1;
   transition: opacity 0.5s ease-in;
   animation-name: fade-in;
-  }
+}
 
 @keyframes fade-out {
   100% {
