@@ -175,41 +175,38 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  var level = 1; // level awal
-  var maxLevel = 6; // level maksimum
-  var eatCount = 0; // jumlah makan
-  var sleepCount = 0; // jumlah tidur
+  var level = 1;
+  var maxLevel = 6;
+  var eatCount = 0;
+  var sleepCount = 0;
 
-  var eatCount = 0; // jumlah pemencetan tombol makan
-  var sleepCount = 0; // jumlah pemencetan tombol tidur
+  var eatCount = 0;
+  var sleepCount = 0;
 
   $("#makan").click(function () {
     eatCount++;
     if (eatCount == 5 && sleepCount == 2) {
-      // setelah makan 5 kali dan tidur 2 kali, naik level
       eatCount = 0;
       sleepCount = 0;
       level++;
 
-      updateLevel(); // memperbarui tampilan level
+      updateLevel();
     }
   });
 
   $("#tidur").click(function () {
     sleepCount++;
     if (eatCount == 5 && sleepCount == 2) {
-      // setelah makan 5 kali dan tidur 2 kali, naik level
       eatCount = 0;
       sleepCount = 0;
       level++;
-      updateLevel(); // memperbarui tampilan level
+      updateLevel();
     }
   });
 
   function updateLevel() {
-    $("#level_curr").text(level); // memperbarui teks level
+    $("#level_curr").text(level);
 
-    // menghapus kelas full dan half, lalu menambahkan kelas yang sesuai
     $("#level_bar").removeClass("full half").addClass(getLevelClass(level));
   }
 
@@ -217,10 +214,10 @@ $(document).ready(function () {
     switch (level) {
       case 1:
       case 4:
-        return ""; // kosong
+        return "";
       case 2:
       case 5:
-        return "half"; // setengah level
+        return "half";
       case 3:
       case 6:
         return "full"; // level penuh
