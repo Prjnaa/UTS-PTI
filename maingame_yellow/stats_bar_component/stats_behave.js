@@ -30,12 +30,25 @@ $(document).ready(function () {
       localStorage.setItem("healthPosition", $("#health_filler").css("top"));
       localStorage.setItem("currhealth", health);
     }
+    if (health < 0) {
+      health = 0;
+    }
     console.log("health:", health);
-  }, 1296000); // 24 jam in game
+  }, 1296000);
 
   $("#reset-button").click(function () {
     health = maxhealth;
     $("#health_filler").css("top", "0px");
+  });
+
+  $("#reset-button").click(function () {
+    health = maxhealth;
+    $("#health_filler").css("top", "0px");
+  });
+
+  $("#obat").click(function () {
+    health = maxhealth;
+    $("#health_filler").animate({ top: "0px" }, 1000);
   });
 
   $(window).on("unload", function () {
@@ -61,17 +74,25 @@ $(document).ready(function () {
 
   setInterval(function () {
     if (energy > 0) {
-      energy -= 10;
-      $("#energy_filler").animate({ top: "+=5px" }, 1000);
+      energy -= 0.5;
+      $("#energy_filler").animate({ top: "+=.25px" }, 1000);
       localStorage.setItem("energyPosition", $("#energy_filler").css("top"));
       localStorage.setItem("currenergy", energy);
     }
+    if (energy < 0) {
+      energy = 0;
+    }
     console.log("energy:", energy);
-  }, 54000); //1 jam in game -10 energy
+  }, 5000);
 
   $("#reset-button").click(function () {
     energy = maxenergy;
     $("#energy_filler").css("top", "0px");
+  });
+
+  $("#tidur").click(function () {
+    energy = maxenergy;
+    $("#energy_filler").animate({ top: "0px" }, 1000);
   });
 
   $(window).on("unload", function () {
@@ -79,6 +100,7 @@ $(document).ready(function () {
     localStorage.setItem("currenergy", energy);
   });
 });
+
 
 //hunger
 $(document).ready(function () {
@@ -97,17 +119,31 @@ $(document).ready(function () {
 
   setInterval(function () {
     if (hunger > 0) {
-      hunger -= 20;
-      $("#hunger_filler").animate({ top: "+=10px" }, 1000);
+      hunger -= 1.5;
+      $("#hunger_filler").animate({ top: "+=.75px" }, 1000);
       localStorage.setItem("hungerPosition", $("#hunger_filler").css("top"));
       localStorage.setItem("currhunger", hunger);
     }
+    if (hunger === 0) {
+      if (health > 0) {
+        health -= 1.5;
+        $("#health_filler").animate({ top: "+=.75px" }, 1000);
+        localStorage.setItem("healthPosition", $("#health_filler").css("top"));
+        localStorage.setItem("currhealth", health);
+      }
+    }
     console.log("hunger:", hunger);
-  }, 216000); //4 jam in game -20 hunger
+    console.log("health:", health);
+  }, 5000);
 
   $("#reset-button").click(function () {
     hunger = maxhunger;
     $("#hunger_filler").css("top", "0px");
+  });
+
+  $("#makan").click(function () {
+    hunger = maxhunger;
+    $("#hunger_filler").animate({ top: "0px" }, 1000);
   });
 
   $(window).on("unload", function () {
@@ -133,13 +169,13 @@ $(document).ready(function () {
 
   setInterval(function () {
     if (happy > 0) {
-      happy -= 5;
-      $("#happy_filler").animate({ top: "+=2.5px" }, 1000);
+      happy -= 0.25;
+      $("#happy_filler").animate({ top: "+=.175px" }, 1000);
       localStorage.setItem("happyPosition", $("#happy_filler").css("top"));
       localStorage.setItem("currhappy", happy);
     }
     console.log("happy:", happy);
-  }, 108000); //2 jam in game -5 happy
+  }, 5000);
 
   $("#reset-button").click(function () {
     happy = maxhappy;
