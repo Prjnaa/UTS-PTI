@@ -177,10 +177,21 @@ body.loaded {
   height: 40px;
   margin-left: 10px;
   border-radius: 180px;
+  background-color: wheat; /* awal level kosong */
+  transition: all 0.5s ease; /* animasi perubahan level */
+}
+
+#level_bar.full {
+  background-color: #32cd32; /* level penuh */
+}
+
+#level_bar.half {
+  background-color: #b5f5b9; /* setengah level */
 }
 
 #level_curr {
-  color: rgb(148, 51, 34);
+  color: rgb(54, 23, 23);
+  text-shadow: 0.5px 0.5px rgb(0, 0, 0);
   font-weight: bold;
   padding: 2px 1px 2px 1px;
 }
