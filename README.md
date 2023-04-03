@@ -10,3 +10,4 @@ Link GitHub : https://github.com/Prjnaa/UTS-PTI.git
 
 Catatan :
 Direkomendasikan menggunakan extension live server di aplikasi Visual Studio Code dalam membuka codenya.
+Level akan naik ketika user menekan button "Makan" sebanyak 5 kali secara berturut-turut dan button "Tidur" sebanyak 2 kali berturut-turut setelahnya
