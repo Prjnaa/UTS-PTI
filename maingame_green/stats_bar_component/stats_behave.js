@@ -1,13 +1,15 @@
-const maxhealth = 100;
-const maxenergy = 100;
-const maxhunger = 100;
-const maxhappy = 100;
-
-let health;
-let energy;
-let hunger;
-let happy;
-
+$(document).ready(function (){
+  const maxhealth = 100;
+  const maxenergy = 100;
+  const maxhunger = 100;
+  const maxhappy = 100;
+  
+  let health = maxhealth;
+  let energy = maxenergy;
+  let hunger = maxhunger;
+  let happy = maxhappy;
+});
+  
 // health
 $(document).ready(function () {
   let savedHealthPosition;
@@ -17,8 +19,6 @@ $(document).ready(function () {
     savedHealth = localStorage.getItem("currhealth");
     if (savedHealth) {
       health = savedHealth;
-    } else {
-      health = maxhealth;
     }
     $("#health_filler").css("top", savedHealthPosition ?? "0px");
   });
@@ -53,8 +53,6 @@ $(document).ready(function () {
     savedEnergy = localStorage.getItem("currenergy");
     if (savedEnergy) {
       energy = savedEnergy;
-    } else {
-      energy = maxenergy;
     }
     $("#energy_filler").css("top", savedEnergyPosition ?? "0px");
   });
@@ -97,8 +95,6 @@ $(document).ready(function () {
     savedHunger = localStorage.getItem("currhunger");
     if (savedHunger) {
       hunger = savedHunger;
-    } else {
-      hunger = maxhunger;
     }
     $("#hunger_filler").css("top", savedHungerPosition ?? "0px");
   });
@@ -146,8 +142,6 @@ $(document).ready(function () {
     savedHappy = localStorage.getItem("currhappy");
     if (savedHappy) {
       happy = savedHappy;
-    } else {
-      happy = maxhappy;
     }
     $("#happy_filler").css("top", savedHappyPosition ?? "0px");
   });

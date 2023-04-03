@@ -59,16 +59,18 @@ window.onload = function () {
   requestAnimationFrame(updateClock);
 };
 
-if ((hours) => 6 && hours < 18) {
-  $(".bg1").attr("src", "/maingame_yellow/bg_assets/MORNING LIVING ROOM.mp4");
-  $(".bg2").attr("src", "/maingame_yellow/bg_assets/NIGHT KITCHEN.mp4");
-  $(".bg3").attr("src", "/maingame_yellow/bg_assets/MORNING BEDROOM.mp4");
-}
-if ((hours) => 18 || hours < 6) {
-  $(".bg1").attr("src", "/maingame_yellow/bg_assets/NIGHT LIVING ROOM.mp4");
-  $(".bg2").attr("src", "/maingame_yellow/bg_assets/NIGHT KITCHEN.mp4");
-  $(".bg3").attr("src", "/maingame_yellow/bg_assets/NIGHT BEDROOM.mp4");
-}
+$(document).ready(function(){
+  if ((hours) => 6 && hours < 18) {
+    $("#bg_vid1").attr("src", "../maingame_yellow/bg_assets/MORNING LIVING ROOM.mp4");
+    $("#bg_vid2").attr("src", "../maingame_yellow/bg_assets/NIGHT KITCHEN.mp4");
+    $("#bg_vid3").attr("src", "../maingame_yellow/bg_assets/MORNING BEDROOM.mp4");
+  }
+  if ((hours) => 18 || hours < 6) {
+    $("#bg_vid1").attr("src", "../maingame_yellow/bg_assets/NIGHT LIVING ROOM.mp4");
+    $("#bg_vid2").attr("src", "../maingame_yellow/bg_assets/NIGHT KITCHEN.mp4");
+    $("#bg_vid3").attr("src", "../maingame_yellow/bg_assets/NIGHT BEDROOM.mp4");
+  }
+});
 
 const videoPagi = [
   "bg_assets/MORNING LIVING ROOM.mp4",
