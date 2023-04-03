@@ -62,7 +62,7 @@ function changeImage(action) {
         image.attr("src", originalImg);
         clearInterval(intervalId);
         isAnimating = false;
-      }, 3800);
+      }, 3200);
       break;
     case "main":
       setTimeout(function () {
