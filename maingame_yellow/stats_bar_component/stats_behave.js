@@ -1,3 +1,4 @@
+
   const maxhealth = 100;
   const maxenergy = 100;
   const maxhunger = 100;
@@ -8,6 +9,7 @@
   let hunger = maxhunger;
   let happy = maxhappy;
 
+  
 // health
 $(document).ready(function () {
   let savedHealthPosition;
