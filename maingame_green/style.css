@@ -27,7 +27,7 @@ body.loaded {
   border: 3px solid rgb(148, 51, 34);
   color: rgb(148, 51, 34);
 
-  background-color: transparent;
+  background-color: rgba(148, 51, 34, 0.342);
   border-radius: 25px;
 
   width: 160px;
@@ -201,3 +201,4 @@ body.loaded {
   font-size: 30px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
