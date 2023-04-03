@@ -12,8 +12,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #817f7f;
+  background: url('bg_vid_assets/Background\ opening.jpg') no-repeat center center fixed;
+  background-size: cover;
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
+
+
 .slide-container {
   max-width: 1120px;
   width: 100%;
@@ -162,10 +169,11 @@ body {
 }
 
 @keyframes fade-in {
-  100% {
+  0% {
     opacity: 0;
   }
-  0% {
+
+  100% {
     opacity: 1;
   }
 }
