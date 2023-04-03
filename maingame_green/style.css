@@ -24,8 +24,8 @@ body.loaded {
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
-  border: 3px solid white;
-  color: white;
+  border: 3px solid rgb(148, 51, 34);
+  color: rgb(148, 51, 34);
 
   background-color: transparent;
   border-radius: 25px;
@@ -35,13 +35,13 @@ body.loaded {
 }
 
 .button:hover {
-  background-color: white;
-  color: black;
+  background-color: rgb(148, 51, 34);
+  color: wheat;
   transition-duration: 250ms;
 }
 
 #char_container {
-  border: 0.75rem solid white;
+  border: 0.75rem solid rgb(148, 51, 34);
   aspect-ratio: 15/9;
   border-radius: 0.5rem;
   position: relative;
@@ -165,7 +165,7 @@ body.loaded {
 
 #level p {
   font-size: 18px;
-  color: rgb(255, 255, 255);
+  color: rgb(148, 51, 34);
   margin-top: 5px;
   margin-bottom: auto;
   padding-left: 12.5px;
@@ -180,13 +180,13 @@ body.loaded {
 }
 
 #level_curr {
-  color: rgb(255, 255, 255);
+  color: rgb(148, 51, 34);
   font-weight: bold;
   padding: 2px 1px 2px 1px;
 }
 
 #clock {
-  color: white;
+  color: rgb(148, 51, 34);
   font-size: 30px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
