@@ -73,3 +73,17 @@ function changeImage(action) {
       break;
   }
 }
+
+$(document).ready(function(){
+  $('.slick-carousel').slick({
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  });
+});
+
