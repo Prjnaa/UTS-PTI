@@ -44,7 +44,7 @@ function changeImage(action) {
         image.attr("src", originalImg);
         clearInterval(intervalId);
         isAnimating = false;
-      }, 2200);
+      }, 4000);
       break;
     case "obat":
       clearInterval(intervalId);
@@ -62,10 +62,10 @@ function changeImage(action) {
         image.attr("src", originalImg);
         clearInterval(intervalId);
         isAnimating = false;
-      }, 3200);
+      }, 3800);
       break;
     case "main":
-      setTimeout(function() {
+      setTimeout(function () {
         window.location.href = "../MainGame/main_game.html";
       }, 0);
       break;

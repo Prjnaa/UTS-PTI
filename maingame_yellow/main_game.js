@@ -1,3 +1,3 @@
-$(window).on('load', function() {
-    $('body').addClass('loaded');
-  });
+$(window).on("load", function () {
+  $("body").addClass("loaded");
+});

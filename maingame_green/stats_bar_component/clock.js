@@ -58,3 +58,69 @@ window.onload = function () {
 
   requestAnimationFrame(updateClock);
 };
+
+if ((hours) => 6 && hours < 18) {
+  $(".bg1").attr("src", "/maingame_green/bg_assets/MORNING LIVING ROOM.mp4");
+  $(".bg2").attr("src", "/maingame_green/bg_assets/NIGHT KITCHEN.mp4");
+  $(".bg3").attr("src", "/maingame_green/bg_assets/MORNING BEDROOM.mp4");
+}
+if ((hours) => 18 || hours < 6) {
+  $(".bg1").attr("src", "/maingame_green/bg_assets/NIGHT LIVING ROOM.mp4");
+  $(".bg2").attr("src", "/maingame_green/bg_assets/NIGHT KITCHEN.mp4");
+  $(".bg3").attr("src", "/maingame_green/bg_assets/NIGHT BEDROOM.mp4");
+}
+
+const videoPagi = [
+  "bg_assets/MORNING LIVING ROOM.mp4",
+  "bg_assets/MORINING KITCHEN.mp4",
+  "bg_assets/MORNING BEDROOM.mp4",
+];
+
+const videoMalam = [
+  "bg_assets/NIGHT LIVING ROOM.mp4",
+  "bg_assets/NIGHT KITCHEN.mp4",
+  "bg_assets/NIGHT BEDROOM.mp4",
+];
+
+let currentVideoIndex = 0;
+
+const videos = document.querySelectorAll("#bg_videos_container video");
+
+function changeVideo() {
+  if ((hours) => 6 && hours < 18) {
+    currentVideoIndex++;
+    if (currentVideoIndex >= videoPagi.length) {
+      currentVideoIndex = 0;
+    }
+    videos.forEach((video, index) => {
+      video.src = videoPagi[currentVideoIndex];
+      if (index === currentVideoIndex) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }
+
+  if ((hours) => 18 || hours < 6) {
+    currentVideoIndex++;
+    if (currentVideoIndex >= videoMalam.length) {
+      currentVideoIndex = 0;
+    }
+    videos.forEach((video, index) => {
+      video.src = videoMalam[currentVideoIndex];
+      if (index === currentVideoIndex) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }
+}
+
+document.getElementById("next_btn").addEventListener("click", () => {
+  changeVideo();
+});
+document.getElementById("prev_btn").addEventListener("click", () => {
+  changeVideo();
+});

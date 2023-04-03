@@ -23,19 +23,6 @@ $(document).ready(function () {
     $("#health_filler").css("top", savedHealthPosition ?? "0px");
   });
 
-  setInterval(function () {
-    if (health > 0) {
-      health -= 25;
-      $("#health_filler").animate({ top: "+=12.5px" }, 1000);
-      localStorage.setItem("healthPosition", $("#health_filler").css("top"));
-      localStorage.setItem("currhealth", health);
-    }
-    if (health < 0) {
-      health = 0;
-    }
-    console.log("health:", health);
-  }, 1296000);
-
   $("#reset-button").click(function () {
     health = maxhealth;
     $("#health_filler").css("top", "0px");
@@ -48,7 +35,7 @@ $(document).ready(function () {
 
   $("#obat").click(function () {
     health = maxhealth;
-    $("#health_filler").animate({ top: "0px" }, 1000);
+    $("#health_filler").animate({ top: "0px" }, 5000);
   });
 
   $(window).on("unload", function () {
@@ -92,7 +79,7 @@ $(document).ready(function () {
 
   $("#tidur").click(function () {
     energy = maxenergy;
-    $("#energy_filler").animate({ top: "0px" }, 1000);
+    $("#energy_filler").animate({ top: "0px" }, 5000);
   });
 
   $(window).on("unload", function () {
@@ -100,7 +87,6 @@ $(document).ready(function () {
     localStorage.setItem("currenergy", energy);
   });
 });
-
 
 //hunger
 $(document).ready(function () {
@@ -124,16 +110,15 @@ $(document).ready(function () {
       localStorage.setItem("hungerPosition", $("#hunger_filler").css("top"));
       localStorage.setItem("currhunger", hunger);
     }
-    if (hunger === 0) {
-      if (health > 0) {
-        health -= 1.5;
-        $("#health_filler").animate({ top: "+=.75px" }, 1000);
-        localStorage.setItem("healthPosition", $("#health_filler").css("top"));
-        localStorage.setItem("currhealth", health);
-      }
-    }
     console.log("hunger:", hunger);
     console.log("health:", health);
+
+    if (hunger <= 0 && health > 0) {
+      health -= 2;
+      $("#health_filler").animate({ top: "+=1px" }, 1000);
+      localStorage.setItem("healthPosition", $("#health_filler").css("top"));
+      localStorage.setItem("currhealth", health);
+    }
   }, 5000);
 
   $("#reset-button").click(function () {
@@ -143,7 +128,7 @@ $(document).ready(function () {
 
   $("#makan").click(function () {
     hunger = maxhunger;
-    $("#hunger_filler").animate({ top: "0px" }, 1000);
+    $("#hunger_filler").animate({ top: "0px" }, 5000);
   });
 
   $(window).on("unload", function () {
@@ -169,8 +154,8 @@ $(document).ready(function () {
 
   setInterval(function () {
     if (happy > 0) {
-      happy -= 0.25;
-      $("#happy_filler").animate({ top: "+=.175px" }, 1000);
+      happy -= 1;
+      $("#happy_filler").animate({ top: "+=.5px" }, 500);
       localStorage.setItem("happyPosition", $("#happy_filler").css("top"));
       localStorage.setItem("currhappy", happy);
     }
@@ -182,6 +167,14 @@ $(document).ready(function () {
     $("#happy_filler").css("top", "0px");
   });
 
+  $("#main").click(function () {
+    happy = maxhappy;
+    $("#happy_filler").animate({ top: "0px" }, 500);
+    let timeout = setTimeout(function () {
+      window.location.href = "../bermain_game_yellow/main_game.html";
+    }, 650);
+  });
+
   $(window).on("unload", function () {
     localStorage.setItem("happyPosition", $("#happy_filler").css("top"));
     localStorage.setItem("currhappy", happy);
@@ -189,41 +182,38 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  var level = 1; // level awal
-  var maxLevel = 6; // level maksimum
-  var eatCount = 0; // jumlah makan
-  var sleepCount = 0; // jumlah tidur
+  var level = 1;
+  var maxLevel = 6;
+  var eatCount = 0;
+  var sleepCount = 0;
 
-  var eatCount = 0; // jumlah pemencetan tombol makan
-  var sleepCount = 0; // jumlah pemencetan tombol tidur
+  var eatCount = 0;
+  var sleepCount = 0;
 
   $("#makan").click(function () {
     eatCount++;
     if (eatCount == 5 && sleepCount == 2) {
-      // setelah makan 5 kali dan tidur 2 kali, naik level
       eatCount = 0;
       sleepCount = 0;
       level++;
 
-      updateLevel(); // memperbarui tampilan level
+      updateLevel();
     }
   });
 
   $("#tidur").click(function () {
     sleepCount++;
     if (eatCount == 5 && sleepCount == 2) {
-      // setelah makan 5 kali dan tidur 2 kali, naik level
       eatCount = 0;
       sleepCount = 0;
       level++;
-      updateLevel(); // memperbarui tampilan level
+      updateLevel();
     }
   });
 
   function updateLevel() {
-    $("#level_curr").text(level); // memperbarui teks level
+    $("#level_curr").text(level);
 
-    // menghapus kelas full dan half, lalu menambahkan kelas yang sesuai
     $("#level_bar").removeClass("full half").addClass(getLevelClass(level));
   }
 
@@ -231,10 +221,10 @@ $(document).ready(function () {
     switch (level) {
       case 1:
       case 4:
-        return ""; // kosong
+        return "";
       case 2:
       case 5:
-        return "half"; // setengah level
+        return "half";
       case 3:
       case 6:
         return "full"; // level penuh
